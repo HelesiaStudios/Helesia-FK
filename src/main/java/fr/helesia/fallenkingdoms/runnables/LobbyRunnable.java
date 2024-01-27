@@ -49,7 +49,7 @@ public class LobbyRunnable extends BukkitRunnable {
 		}
 		
 		if ((timer == 120) || (timer == 90) || (timer == 60) || (timer == 30) || (timer == 15) || (timer == 10) || (timer <= 5 && timer != 0)) {
-			Bukkit.broadcastMessage("§6Démarrage de la partie dans §e" + timer + " " + getSecond() + "§6.");
+			Bukkit.broadcastMessage("§6[FK] §fDébut de la partie dans §b" + timer + " " + getSecond() + "§6.");
 			for (Player players : Bukkit.getOnlinePlayers()) {
 				players.playSound(players.getLocation(), Sound.ORB_PICKUP, 10f, 1f);
 			}

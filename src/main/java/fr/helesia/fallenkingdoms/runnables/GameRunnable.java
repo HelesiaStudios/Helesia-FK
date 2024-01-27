@@ -70,7 +70,7 @@ public class GameRunnable extends BukkitRunnable {
 			if (ScoreboardManager.scoreboardGame.containsKey(player)) {
 				ScoreboardManager.scoreboardGame.get(player).setLine(7, "§f§k");
 				ScoreboardManager.scoreboardGame.get(player).setLine(6, Main.getINSTANCE().assaut ? "§7Assaut: §a✔" : "§7Assaut: §c✘");
-				ScoreboardManager.scoreboardGame.get(player).setLine(5, Main.getINSTANCE().pvp ? "§7PVP: §a✔" : "§fPVP: §c✘");
+				ScoreboardManager.scoreboardGame.get(player).setLine(5, Main.getINSTANCE().pvp ? "§7PVP: §a✔" : "§7PVP: §c✘");
 				ScoreboardManager.scoreboardGame.get(player).setLine(4, "§f§k");
 				ScoreboardManager.scoreboardGame.get(player).setLine(3, "§cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
 				ScoreboardManager.scoreboardGame.get(player).setLine(2, "§3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");

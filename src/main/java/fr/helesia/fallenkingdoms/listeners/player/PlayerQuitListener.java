@@ -18,7 +18,7 @@ public class PlayerQuitListener implements Listener {
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
 		
-		event.setQuitMessage(null);
+		event.setQuitMessage(Main.getINSTANCE().getPrefix() + "§c- §e" + player.getName() + " (" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()+")");
 		
 		if (!GameStatus.isStatus(GameStatus.ATTENTE)) createPNJ(player);
 	}

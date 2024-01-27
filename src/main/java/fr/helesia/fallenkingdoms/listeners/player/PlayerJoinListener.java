@@ -32,13 +32,14 @@ public class PlayerJoinListener implements Listener {
 			new GamePlayer(player.getName());
 			return;
 		}
+		player.getInventory().clear();
 		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
 		player.getInventory().setItem(0, selectTeam);
 
 		Location spawn = new Location(Bukkit.getWorld("world"), 2000.439, 66.0, 2000.512);
 		player.teleport(spawn);
 
-		event.setJoinMessage(Main.getINSTANCE().getPrefix() + "§e" + player.getName() + " §7a rejoint la partie §a(" + Bukkit.getOnlinePlayers().size() + "§a/" + Bukkit.getMaxPlayers() + ")");
+		event.setJoinMessage(Main.getINSTANCE().getPrefix() + "§a+ §e" + player.getName() + " (" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + ")");
 		
 		new GamePlayer(player.getName());
 		GamePlayer gp = GamePlayer.gamePlayers.get(player.getName());

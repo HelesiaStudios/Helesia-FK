@@ -29,10 +29,12 @@ public class ScoreboardManager {
   		this.scoreboardSign.setObjectiveName(ChatColor.YELLOW + " " + ChatColor.GOLD + ChatColor.BOLD + "Fallen Kingdoms");
   		this.scoreboardSign.create();
     
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, "§8??/??/24 fk-1aeffs");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§f§k");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§7Jeu: §fFallen Kingdoms");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, "§8??/??/24 fk-1aeffs");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, "§f§k");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, "§7Jeu: §fFallen Kingdoms");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§9§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§fEn attente (" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)) + ")");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§9§k");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, ChatColor.GOLD + "mc.helesia.fr");
   	}
@@ -48,7 +50,7 @@ public class ScoreboardManager {
 		}
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, "§f§k");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, Main.getINSTANCE().assaut ? "§7Assaut: §a✔" : "§7Assaut: §c✘");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, Main.getINSTANCE().pvp ? "§7PVP: §a✔" : "§fPVP: §c✘");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, Main.getINSTANCE().pvp ? "§7PVP: §a✔" : "§7PVP: §c✘");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§f§k");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
