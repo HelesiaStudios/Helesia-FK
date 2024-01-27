@@ -43,8 +43,8 @@ public class Main extends JavaPlugin {
 		lobbyRunnable = new LobbyRunnable();
 		random = new Random();
 		
-		blueBase = new RegionManager(new Location(Bukkit.getWorld("world"), -405.5, 94, 369.5), new Location(Bukkit.getWorld("world"), -437.5, 91, 400.5));
-		redBase = new RegionManager(new Location(Bukkit.getWorld("world"), -575.5, 85, 404), new Location(Bukkit.getWorld("world"), -605.5, 88, 373.5));
+		blueBase = new RegionManager(new Location(Bukkit.getWorld("world"), 1984.500, 82.0, 1930.509), new Location(Bukkit.getWorld("world"), 2017.798, 56.19015, 1897.430));
+		redBase = new RegionManager(new Location(Bukkit.getWorld("world"), 2016.582, 82.0, 2070.412), new Location(Bukkit.getWorld("world"), 1983.658, 57.89932, 2103.974));
 		
 		new ListenersManager(this).registerListeners();
 		GameStatus.setStatus(GameStatus.ATTENTE);

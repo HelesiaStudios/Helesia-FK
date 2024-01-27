@@ -24,9 +24,9 @@ public class GameManager {
 		Bukkit.getWorld("world").setTime(0);
 		
 		// rouge
-		this.create(new Location(Bukkit.getWorld("world"), -583.5, 85, 395.5), "rouge");
+		this.create(new Location(Bukkit.getWorld("world"), 1999.990, 66.0, 2086.954), "rouge");
 		// bleu
-		this.create(new Location(Bukkit.getWorld("world"), -423.5, 94, 382), "bleu");
+		this.create(new Location(Bukkit.getWorld("world"), 2001.019, 66.0, 1913.966), "bleu");
 		
 		// scoreboard
 		for (Player player : Bukkit.getOnlinePlayers()) {
