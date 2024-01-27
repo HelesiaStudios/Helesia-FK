@@ -16,8 +16,8 @@ public class GameManager {
 	private Location redSpawn, blueSpawn;
 
 	public GameManager() {
-		this.redSpawn = new Location(Bukkit.getWorld("world"), 0, 0, 0);
-		this.blueSpawn = new Location(Bukkit.getWorld("world"), 0, 0, 0);
+		this.redSpawn = new Location(Bukkit.getWorld("world"), 1999.628, 65.56250, 2108.371);
+		this.blueSpawn = new Location(Bukkit.getWorld("world"), 2001.685, 65.56250, 1892.300);
 	}
 	
 	public void loadGame() {
