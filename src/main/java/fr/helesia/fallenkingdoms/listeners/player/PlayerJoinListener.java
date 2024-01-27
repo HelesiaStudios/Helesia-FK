@@ -32,6 +32,8 @@ public class PlayerJoinListener implements Listener {
 			new GamePlayer(player.getName());
 			return;
 		}
+		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
+		player.getInventory().setItem(0, selectTeam);
 
 		Location spawn = new Location(Bukkit.getWorld("world"), 2000.439, 66.0, 2000.512);
 		player.teleport(spawn);
@@ -46,8 +48,6 @@ public class PlayerJoinListener implements Listener {
 			new LobbyRunnable().runTaskTimer(Main.getINSTANCE(), 0L, 20L);
 			Main.getINSTANCE().lobbyRunnable.start = true;
 		}
-		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
-		player.getInventory().setItem(0, selectTeam);
 	}
 
 	@EventHandler

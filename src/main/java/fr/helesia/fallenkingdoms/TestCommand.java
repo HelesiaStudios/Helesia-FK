@@ -1,5 +1,6 @@
 package fr.helesia.fallenkingdoms;
 
+import fr.helesia.fallenkingdoms.menus.TeamsMenu;
 import fr.helesia.fallenkingdoms.runnables.LobbyRunnable;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,6 +14,10 @@ public class TestCommand implements CommandExecutor {
 		if(label.equalsIgnoreCase("start")){
 			new LobbyRunnable().runTaskTimer(Main.getINSTANCE(), 0L, 20L);
 			Main.getINSTANCE().lobbyRunnable.start = true;
+		}
+
+		if(label.equalsIgnoreCase("team")){
+			new TeamsMenu().open(sender.getServer().getPlayer(sender.getName()));
 		}
 
 		return true;
