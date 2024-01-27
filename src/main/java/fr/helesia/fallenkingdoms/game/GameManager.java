@@ -1,7 +1,6 @@
 package fr.helesia.fallenkingdoms.game;
 
 import fr.helesia.fallenkingdoms.player.GamePlayer;
-import fr.helesia.fallenkingdoms.runnables.SuicideMessage;
 import fr.helesia.fallenkingdoms.utils.ItemBuilder;
 import fr.helesia.fallenkingdoms.utils.TitleManager;
 import org.bukkit.Bukkit;
@@ -14,12 +13,10 @@ import org.bukkit.entity.Player;
 
 import fr.helesia.fallenkingdoms.Main;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
 
 public class GameManager {
 	
 	private Location redSpawn, blueSpawn;
-	public Plugin plugin = (Plugin) Bukkit.getPluginManager();
 
 	public GameManager() {
 		this.redSpawn = new Location(Bukkit.getWorld("world"), 1999.628, 65.56250, 2108.371);
@@ -57,8 +54,7 @@ public class GameManager {
 			Bukkit.broadcastMessage("§f");
 			Bukkit.broadcastMessage("§fEquipe toi et récolte un maximum de TNT pour te préparer à l'assaut !");
 			Bukkit.broadcastMessage("§6§m-§6§m--§6§m----------------------------------------------");
-			SuicideMessage suicideMessage = new SuicideMessage();
-			suicideMessage.runTaskTimer(this.plugin, 40L, 0L);
+			Bukkit.broadcastMessage(Main.getINSTANCE().getPrefix() + "Si tu es coincé, tu peux utiliser la commande §b/suicide§f.");
 		}
 	}
 	
