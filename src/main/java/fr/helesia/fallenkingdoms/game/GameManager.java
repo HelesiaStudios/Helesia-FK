@@ -49,11 +49,11 @@ public class GameManager {
 			ItemStack pioche = new ItemBuilder(Material.WOOD_PICKAXE).toItemStack();
 			player.getInventory().setItem(1, pioche);
 			TitleManager.sendTitle(player, "§6Fallen Kingdoms", "§eLa partie a commencé", 40);
-			Bukkit.broadcastMessage("§6§m-§6FK§6§m---------------------------");
+			Bukkit.broadcastMessage("§6§m-§6FK§6§m----------------------------------------------");
 			Bukkit.broadcastMessage("§fLa phase §bPréparation §fcommence !");
 			Bukkit.broadcastMessage("§f");
 			Bukkit.broadcastMessage("§fEquipe toi et récolte un maximum de TNT pour te préparer à l'assaut !");
-			Bukkit.broadcastMessage("§6§m-§6§m--§6§m---------------------------");
+			Bukkit.broadcastMessage("§6§m-§6§m--§6§m----------------------------------------------");
 		}
 	}
 	
