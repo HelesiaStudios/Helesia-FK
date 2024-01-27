@@ -11,6 +11,7 @@ import fr.helesia.fallenkingdoms.utils.RegionManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Difficulty;
 import org.bukkit.Location;
+import org.bukkit.WorldCreator;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -42,7 +43,7 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		this.getCommand("start").setExecutor(new TestCommand());
 		this.getCommand("team").setExecutor(new TestCommand());
-
+		
 		lobbyRunnable = new LobbyRunnable();
 		random = new Random();
 
