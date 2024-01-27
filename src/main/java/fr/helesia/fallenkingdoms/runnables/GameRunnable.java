@@ -6,6 +6,7 @@ import java.util.Date;
 import fr.helesia.fallenkingdoms.GameStatus;
 import fr.helesia.fallenkingdoms.Main;
 import fr.helesia.fallenkingdoms.game.HearthManager;
+import fr.helesia.fallenkingdoms.scoreboard.ScoreboardSign;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -67,13 +68,14 @@ public class GameRunnable extends BukkitRunnable {
 		
 		for (Player player : Bukkit.getOnlinePlayers()) {
 			if (ScoreboardManager.scoreboardGame.containsKey(player)) {
-				ScoreboardManager.scoreboardGame.get(player).setLine(8, "§fJour: §a" + GameRunnable.day);
-				ScoreboardManager.scoreboardGame.get(player).setLine(7, ChatColor.WHITE + "Temps " + ChatColor.YELLOW + new SimpleDateFormat("mm:ss").format(new Date(GameRunnable.timer * 1000)));
-				ScoreboardManager.scoreboardGame.get(player).setLine(6, ChatColor.WHITE + "Kills: " + ChatColor.RED + player.getStatistic(Statistic.PLAYER_KILLS));
-				if (HearthManager.enderCrystals.get("rouge") != null) ScoreboardManager.scoreboardGame.get(player).setLine(5, ChatColor.WHITE + "Rouge: " + ChatColor.RED + HearthManager.enderCrystals.get("rouge").getLife() + ".0");
-				if (HearthManager.enderCrystals.get("bleu") != null) ScoreboardManager.scoreboardGame.get(player).setLine(4, ChatColor.WHITE + "Bleu: " + ChatColor.RED + HearthManager.enderCrystals.get("bleu").getLife() + ".0");
-				ScoreboardManager.scoreboardGame.get(player).setLine(2, Main.getINSTANCE().pvp ? "§fPVP: §a✓" : "§fPVP: §c✗");
-				ScoreboardManager.scoreboardGame.get(player).setLine(1, Main.getINSTANCE().assaut ? "§fAssauts: §a✓" : "§fAssauts: §c✗");
+				ScoreboardManager.scoreboardGame.get(player).setLine(7, "§f§k");
+				ScoreboardManager.scoreboardGame.get(player).setLine(6, Main.getINSTANCE().assaut ? "§7Assaut: §a✔" : "§7Assaut: §c✘");
+				ScoreboardManager.scoreboardGame.get(player).setLine(5, Main.getINSTANCE().pvp ? "§7PVP: §a✔" : "§fPVP: §c✘");
+				ScoreboardManager.scoreboardGame.get(player).setLine(4, "§f§k");
+				ScoreboardManager.scoreboardGame.get(player).setLine(3, "§cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
+				ScoreboardManager.scoreboardGame.get(player).setLine(2, "§3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
+				ScoreboardManager.scoreboardGame.get(player).setLine(1, "§f§k");
+				ScoreboardManager.scoreboardGame.get(player).setLine(0, "§7Temps: §f" + GameRunnable.day);
 			}
 		}
 	}

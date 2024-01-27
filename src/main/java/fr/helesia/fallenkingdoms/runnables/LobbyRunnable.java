@@ -61,10 +61,6 @@ public class LobbyRunnable extends BukkitRunnable {
 	private void setLevel() {
 		for (Player players : Bukkit.getOnlinePlayers()) {
 			players.setLevel(timer);
-			if (ScoreboardManager.scoreboardGame.containsKey(players)) {
-				ScoreboardManager.scoreboardGame.get(players).setLine(9, ChatColor.WHITE + "Début dans: " + ChatColor.GREEN + new SimpleDateFormat("mm:ss").format(new Date(timer * 1000)));
-				ScoreboardManager.scoreboardGame.get(players).setLine(8, ChatColor.WHITE + "Joueurs: " + ChatColor.YELLOW + Bukkit.getOnlinePlayers().size() + "§8/§e" + Bukkit.getMaxPlayers());
-			}
 		}
 	}
 }

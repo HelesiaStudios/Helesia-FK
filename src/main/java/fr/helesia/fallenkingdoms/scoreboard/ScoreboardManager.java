@@ -53,6 +53,6 @@ public class ScoreboardManager {
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§f§k");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§7Temps: §f" + new SimpleDateFormat("mm:ss").format(new Date(GameRunnable.timer * 1000)));
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§7Temps: §f" + GameRunnable.day);
   	}
 }
