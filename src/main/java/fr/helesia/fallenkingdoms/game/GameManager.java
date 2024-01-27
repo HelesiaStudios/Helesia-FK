@@ -1,6 +1,7 @@
 package fr.helesia.fallenkingdoms.game;
 
 import fr.helesia.fallenkingdoms.player.GamePlayer;
+import fr.helesia.fallenkingdoms.runnables.SuicideMessage;
 import fr.helesia.fallenkingdoms.utils.ItemBuilder;
 import fr.helesia.fallenkingdoms.utils.TitleManager;
 import org.bukkit.Bukkit;
@@ -13,6 +14,7 @@ import org.bukkit.entity.Player;
 
 import fr.helesia.fallenkingdoms.Main;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
 public class GameManager {
 	
@@ -54,6 +56,8 @@ public class GameManager {
 			Bukkit.broadcastMessage("§f");
 			Bukkit.broadcastMessage("§fEquipe toi et récolte un maximum de TNT pour te préparer à l'assaut !");
 			Bukkit.broadcastMessage("§6§m-§6§m--§6§m----------------------------------------------");
+			SuicideMessage suicideMessage = new SuicideMessage();
+			suicideMessage.runTaskTimer((Plugin) this, 40L, 0L);
 		}
 	}
 	

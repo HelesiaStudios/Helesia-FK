@@ -60,7 +60,6 @@ public class EntityDamageListener implements Listener {
 					if (Main.getINSTANCE().red_team.contains(damager.getUniqueId())) {
 						damager.sendMessage("§cVous ne pouvez pas attaquer votre coeur...");
 						event.setCancelled(true);
-						damager.setFireTicks(20);
 						return;
 					}
 					
