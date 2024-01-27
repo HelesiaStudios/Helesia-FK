@@ -38,7 +38,7 @@ public class Main extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		this.getCommand("test").setExecutor(new TestCommand());
+		this.getCommand("start").setExecutor(new TestCommand());
 		
 		lobbyRunnable = new LobbyRunnable();
 		random = new Random();
