@@ -39,7 +39,7 @@ public class PlayerJoinListener implements Listener {
 		GamePlayer gp = GamePlayer.gamePlayers.get(player.getName());
 		gp.scoreboard.loadScoreboard();
 		
-		if ((Bukkit.getOnlinePlayers().size() >= 1) && (!(Main.getINSTANCE().lobbyRunnable.start))) {
+		if ((Bukkit.getOnlinePlayers().size() >= 10) && (!(Main.getINSTANCE().lobbyRunnable.start))) {
 			new LobbyRunnable().runTaskTimer(Main.getINSTANCE(), 0L, 20L);
 			Main.getINSTANCE().lobbyRunnable.start = true;
 		}
