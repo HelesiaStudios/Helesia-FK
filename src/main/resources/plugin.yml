@@ -1,0 +1,6 @@
+main: fr.helesia.fallenkingdoms.Main
+name: Helesia-FK
+version: 1.0
+author: 6my_
+commands:
+  test:
