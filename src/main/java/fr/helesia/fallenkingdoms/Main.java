@@ -79,7 +79,7 @@ public class Main extends JavaPlugin {
 	public String getTeam(Player player) {
 		if (Main.getINSTANCE().red_team.contains(player.getUniqueId())) {
 			return "§cRouge";
-		} else if (Main.getINSTANCE().blue_team.contains(victim.getUniqueId())) {
+		} else if (Main.getINSTANCE().blue_team.contains(player.getUniqueId())) {
 			return "§9Bleu";
 		}
 		return "§7Aucune";
