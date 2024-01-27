@@ -13,6 +13,7 @@ import org.bukkit.Difficulty;
 import org.bukkit.Location;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.helesia.fallenkingdoms.listeners.ListenersManager;
@@ -73,5 +74,14 @@ public class Main extends JavaPlugin {
 				entity.remove();
 			}
 		}
+	}
+
+	public String getTeam(Player player) {
+		if (Main.getINSTANCE().red_team.contains(player.getUniqueId())) {
+			return "§cRouge";
+		} else if (Main.getINSTANCE().blue_team.contains(victim.getUniqueId())) {
+			return "§9Bleu";
+		}
+		return "§7Aucune";
 	}
 }

@@ -14,7 +14,7 @@ public class HearthManager {
 	
 	public HearthManager(EnderCrystal ec, String name) {
 		this.name = name;
-		this.heart = 1000;
+		this.heart = 500;
 		this.ec = ec;
 		enderCrystals.put(name, this);
 	}

@@ -11,11 +11,12 @@ public class PlayerDeathEvent implements Listener {
     @EventHandler
     public void Death(org.bukkit.event.entity.PlayerDeathEvent e){
         e.setDeathMessage(null);
-        Player player = e.getEntity();
-        if (Main.getINSTANCE().red_team.contains(player.getUniqueId())) {
-            player.teleport(getRedSpawn());
-        } else if (Main.getINSTANCE().blue_team.contains(player.getUniqueId())) {
-            player.teleport(getBlueSpawn());
+        Player victim = (Player) e.getEntity();
+
+        if (Main.getINSTANCE().red_team.contains(victim.getUniqueId())) {
+            victim.teleport(getRedSpawn());
+        } else if (Main.getINSTANCE().blue_team.contains(victim.getUniqueId())) {
+            victim.teleport(getBlueSpawn());
         }
     }
     public Location getBlueSpawn(){

@@ -29,26 +29,30 @@ public class ScoreboardManager {
   		this.scoreboardSign.setObjectiveName(ChatColor.YELLOW + " " + ChatColor.GOLD + ChatColor.BOLD + "Fallen Kingdoms");
   		this.scoreboardSign.create();
     
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(10, ChatColor.DARK_GRAY + "-----------------");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, ChatColor.WHITE + "Début dans: " + ChatColor.GREEN + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)));
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, ChatColor.WHITE + "Joueurs: " + ChatColor.YELLOW + Bukkit.getOnlinePlayers().size() + "§8/§e" + Bukkit.getMaxPlayers());
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, "§3");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, ChatColor.RED + "En attente de");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, ChatColor.RED + "joueurs...");;
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§1");
-	    ((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§8-----------------");
-	    ((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, ChatColor.GOLD + "mc.helesia.fr");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, "§8??/??/24 fk-1aeffs");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§f§k");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§7Jeu: §fFallen Kingdoms");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§9§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, ChatColor.GOLD + "mc.helesia.fr");
   	}
   	
   	public void loadScoreboardGame() {
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, "§6 ");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, "§fJour: §a" + GameRunnable.day);
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, ChatColor.WHITE + "Temps: " + ChatColor.AQUA + new SimpleDateFormat("mm:ss").format(new Date(GameRunnable.timer * 1000)));
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, ChatColor.WHITE + "Kills: " + ChatColor.RED + player.getStatistic(Statistic.PLAYER_KILLS));
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, ChatColor.WHITE + "Rouge: " + ChatColor.RED + HearthManager.enderCrystals.get("rouge").getLife() + ".0");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, ChatColor.WHITE + "Bleu: " + ChatColor.RED + HearthManager.enderCrystals.get("bleu").getLife() + ".0");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§7------------");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, Main.getINSTANCE().pvp ? "§fPVP: §a✓" : "§fPVP: §c✗");
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, Main.getINSTANCE().assaut ? "§fAssauts: §a✓" : "§fAssauts: §c✗");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(11, "§8??/??/24 fk-1aeffs");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(10, "§f§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, "§7Equipe: §f" + Main.getINSTANCE().getTeam(player));
+		if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§cRouge")){
+			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, "§7Ton nexus: §f" + HearthManager.enderCrystals.get("rouge").getLife());
+		} else if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§9Bleu")){
+			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, "§7Ton nexus: §f" + HearthManager.enderCrystals.get("bleu").getLife());
+		}
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, "§f§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, Main.getINSTANCE().assaut ? "§7Assaut: §a✔" : "§7Assaut: §c✘");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, Main.getINSTANCE().pvp ? "§7PVP: §a✔" : "§fPVP: §c✘");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§f§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§f§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§7Temps: §f" + new SimpleDateFormat("mm:ss").format(new Date(GameRunnable.timer * 1000)));
   	}
 }
