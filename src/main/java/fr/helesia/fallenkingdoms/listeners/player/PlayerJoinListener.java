@@ -46,7 +46,7 @@ public class PlayerJoinListener implements Listener {
 			new LobbyRunnable().runTaskTimer(Main.getINSTANCE(), 0L, 20L);
 			Main.getINSTANCE().lobbyRunnable.start = true;
 		}
-		ItemStack selectTeam = new ItemBuilder(Material.c).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
+		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
 		player.getInventory().setItem(0, selectTeam);
 	}
 
