@@ -4,7 +4,6 @@ import fr.helesia.fallenkingdoms.GameStatus;
 import fr.helesia.fallenkingdoms.Main;
 import fr.helesia.fallenkingdoms.menus.TeamsMenu;
 import fr.helesia.fallenkingdoms.player.GamePlayer;
-import fr.helesia.fallenkingdoms.utils.DyeColor;
 import fr.helesia.fallenkingdoms.utils.ItemBuilder;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -33,7 +32,7 @@ public class PlayerJoinListener implements Listener {
 			return;
 		}
 		player.getInventory().clear();
-		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
+		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setDyeColor(DyeColor.WHITE).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
 		player.getInventory().setItem(0, selectTeam);
 
 		Location spawn = new Location(Bukkit.getWorld("world"), 2000.439, 66.0, 2000.512);
