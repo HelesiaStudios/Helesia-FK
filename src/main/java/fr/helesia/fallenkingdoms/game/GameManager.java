@@ -19,6 +19,7 @@ import org.bukkit.plugin.Plugin;
 public class GameManager {
 	
 	private Location redSpawn, blueSpawn;
+	public Plugin plugin = (Plugin) Bukkit.getPluginManager();
 
 	public GameManager() {
 		this.redSpawn = new Location(Bukkit.getWorld("world"), 1999.628, 65.56250, 2108.371);
@@ -57,7 +58,7 @@ public class GameManager {
 			Bukkit.broadcastMessage("§fEquipe toi et récolte un maximum de TNT pour te préparer à l'assaut !");
 			Bukkit.broadcastMessage("§6§m-§6§m--§6§m----------------------------------------------");
 			SuicideMessage suicideMessage = new SuicideMessage();
-			suicideMessage.runTaskTimer((Plugin) this, 40L, 0L);
+			suicideMessage.runTaskTimer(this.plugin, 40L, 0L);
 		}
 	}
 	

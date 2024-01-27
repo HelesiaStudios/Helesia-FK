@@ -43,7 +43,7 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		this.getCommand("start").setExecutor(new TestCommand());
 		this.getCommand("team").setExecutor(new TestCommand());
-		
+
 		lobbyRunnable = new LobbyRunnable();
 		random = new Random();
 
