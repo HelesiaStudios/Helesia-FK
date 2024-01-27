@@ -3,6 +3,7 @@ package fr.helesia.fallenkingdoms.game;
 import fr.helesia.fallenkingdoms.player.GamePlayer;
 import fr.helesia.fallenkingdoms.utils.TitleManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Difficulty;
 import org.bukkit.Location;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.EntityType;
@@ -22,6 +23,7 @@ public class GameManager {
 	public void loadGame() {
 		Bukkit.getWorld("world").setPVP(false);
 		Bukkit.getWorld("world").setTime(0);
+		Bukkit.getWorld("world").setDifficulty(Difficulty.NORMAL);
 		
 		// rouge
 		this.create(new Location(Bukkit.getWorld("world"), 1999.990, 66.0, 2086.954), "rouge");

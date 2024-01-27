@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import fr.helesia.fallenkingdoms.utils.RegionManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Difficulty;
 import org.bukkit.Location;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.Entity;
@@ -42,6 +43,10 @@ public class Main extends JavaPlugin {
 		
 		lobbyRunnable = new LobbyRunnable();
 		random = new Random();
+
+		Bukkit.getWorld("world").setPVP(false);
+		Bukkit.getWorld("world").setTime(0);
+		Bukkit.getWorld("world").setDifficulty(Difficulty.PEACEFUL);
 		
 		blueBase = new RegionManager(new Location(Bukkit.getWorld("world"), 1984.500, 82.0, 1930.509), new Location(Bukkit.getWorld("world"), 2017.798, 56.19015, 1897.430));
 		redBase = new RegionManager(new Location(Bukkit.getWorld("world"), 2016.582, 82.0, 2070.412), new Location(Bukkit.getWorld("world"), 1983.658, 57.89932, 2103.974));
