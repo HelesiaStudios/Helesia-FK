@@ -44,7 +44,6 @@ public class PlayerJoinListener implements Listener {
 		new GamePlayer(player.getName());
 		GamePlayer gp = GamePlayer.gamePlayers.get(player.getName());
 		gp.scoreboard.loadScoreboard();
-		ScoreboardManager.scoreboardGame.get(player).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
 		
 		if ((Bukkit.getOnlinePlayers().size() >= 10) && (!(Main.getINSTANCE().lobbyRunnable.start))) {
 			new LobbyRunnable().runTaskTimer(Main.getINSTANCE(), 0L, 20L);

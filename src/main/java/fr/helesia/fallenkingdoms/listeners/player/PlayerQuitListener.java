@@ -21,8 +21,6 @@ public class PlayerQuitListener implements Listener {
 		player.getInventory().clear();
 		
 		event.setQuitMessage(Main.getINSTANCE().getPrefix() + "§c- §e" + player.getName() + " (" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()+")");
-
-		ScoreboardManager.scoreboardGame.get(player).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
 		if (!GameStatus.isStatus(GameStatus.ATTENTE)) createPNJ(player);
 	}
 	
