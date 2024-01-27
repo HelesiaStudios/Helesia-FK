@@ -1,15 +1,18 @@
 package fr.helesia.fallenkingdoms.game;
 
 import fr.helesia.fallenkingdoms.player.GamePlayer;
+import fr.helesia.fallenkingdoms.utils.ItemBuilder;
 import fr.helesia.fallenkingdoms.utils.TitleManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Difficulty;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
 import fr.helesia.fallenkingdoms.Main;
+import org.bukkit.inventory.ItemStack;
 
 public class GameManager {
 	
@@ -42,7 +45,9 @@ public class GameManager {
 				player.teleport(getBlueSpawn());
 			}
 			
-			// message de démarrage de partie
+			player.getInventory().clear();
+			ItemStack pioche = new ItemBuilder(Material.WOOD_PICKAXE).toItemStack();
+			player.getInventory().setItem(1, pioche);
 			TitleManager.sendTitle(player, "§6Fallen Kingdoms", "§eLa partie a commencé", 40);
 		}
 	}
