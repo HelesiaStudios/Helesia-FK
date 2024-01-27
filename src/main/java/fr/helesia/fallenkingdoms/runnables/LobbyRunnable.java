@@ -6,6 +6,7 @@ import java.util.Date;
 import fr.helesia.fallenkingdoms.GameStatus;
 import fr.helesia.fallenkingdoms.Main;
 import fr.helesia.fallenkingdoms.game.GameManager;
+import fr.helesia.fallenkingdoms.scoreboard.ScoreboardSign;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
@@ -49,8 +50,9 @@ public class LobbyRunnable extends BukkitRunnable {
 		}
 		
 		if ((timer == 120) || (timer == 90) || (timer == 60) || (timer == 30) || (timer == 15) || (timer == 10) || (timer <= 5 && timer != 0)) {
-			Bukkit.broadcastMessage("§6[FK] §fDébut de la partie dans §b" + timer + " " + getSecond() + "§6.");
+			Bukkit.broadcastMessage("§6[FK] §fDébut de la partie dans §b" + timer + " " + getSecond() + "§f.");
 			for (Player players : Bukkit.getOnlinePlayers()) {
+				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
 				players.playSound(players.getLocation(), Sound.ORB_PICKUP, 10f, 1f);
 			}
 		}

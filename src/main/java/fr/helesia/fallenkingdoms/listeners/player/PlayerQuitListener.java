@@ -2,6 +2,7 @@ package fr.helesia.fallenkingdoms.listeners.player;
 
 import fr.helesia.fallenkingdoms.GameStatus;
 import fr.helesia.fallenkingdoms.Main;
+import fr.helesia.fallenkingdoms.scoreboard.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -17,9 +18,11 @@ public class PlayerQuitListener implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
+		player.getInventory().clear();
 		
 		event.setQuitMessage(Main.getINSTANCE().getPrefix() + "§c- §e" + player.getName() + " (" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()+")");
-		
+
+		ScoreboardManager.scoreboardGame.get(player).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
 		if (!GameStatus.isStatus(GameStatus.ATTENTE)) createPNJ(player);
 	}
 	
@@ -46,7 +49,7 @@ public class PlayerQuitListener implements Listener {
 		
 		Villager villager = (Villager) Bukkit.getWorld("world").spawnEntity(player.getLocation(), EntityType.VILLAGER);
 		// name floating text
-		villager.setCustomName(player.getName());
+		villager.setCustomName(Main.getINSTANCE().getTeam(player) + " " + player.getName());
 		villager.setCustomNameVisible(true);
 		
 		// inventory
