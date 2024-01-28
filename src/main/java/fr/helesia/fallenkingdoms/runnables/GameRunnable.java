@@ -62,6 +62,7 @@ public class GameRunnable extends BukkitRunnable {
 				Bukkit.getOnlinePlayers().forEach(players -> {
 					players.getInventory().addItem(new ItemStack(Material.ENDER_PEARL, 2));
 				});
+				Bukkit.broadcastMessage(Main.getINSTANCE().getPrefix() + "§fTout les joueurs reçoit une ender pearl !");
 				return;
 			}
 		}

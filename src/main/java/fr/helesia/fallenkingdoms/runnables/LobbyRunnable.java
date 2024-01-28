@@ -50,21 +50,23 @@ public class LobbyRunnable extends BukkitRunnable {
 		}
 		
 		if ((timer == 120) || (timer == 90) || (timer == 60) || (timer == 30) || (timer == 15) || (timer == 10) || (timer <= 5 && timer != 0)) {
-			Bukkit.broadcastMessage("§6[FK] §fDébut de la partie dans §b" + timer + " " + getSecond() + "§f.");
+			Bukkit.broadcastMessage("§8➵ §fDébut de la partie dans §b" + timer + " " + getSecond() + "§f.");
 			for (Player players : Bukkit.getOnlinePlayers()) {
-				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§8➵ §7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+				ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)) + new LobbyRunnable().getSecond());
 				players.playSound(players.getLocation(), Sound.ORB_PICKUP, 10f, 1f);
 				players.sendTitle("§f", "§7Début dans " + timer + " " + getSecond());
 			}
 		}
 	}
 
-	private String getSecond() { return timer == 1 ? "seconde" : "secondes"; }
+	private String getSecond() { return timer == 1 ? "sec" : "secs"; }
 	
 	private void setLevel() {
 		for (Player players : Bukkit.getOnlinePlayers()) {
 			players.setLevel(timer);
-			ScoreboardManager.scoreboardGame.get(players).setLine(2, "§fEn attente (" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)) + ")");
+			ScoreboardManager.scoreboardGame.get(players).setLine(4, "§8➵ §7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+			ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)));
 		}
 	}
 }

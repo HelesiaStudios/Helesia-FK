@@ -18,6 +18,9 @@ import org.bukkit.inventory.ItemStack;
 
 import fr.helesia.fallenkingdoms.runnables.LobbyRunnable;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class PlayerJoinListener implements Listener {
 
 	@EventHandler
@@ -50,7 +53,13 @@ public class PlayerJoinListener implements Listener {
 		if ((Bukkit.getOnlinePlayers().size() >= 10) && (!(Main.getINSTANCE().lobbyRunnable.start))) {
 			new LobbyRunnable().runTaskTimer(Main.getINSTANCE(), 0L, 20L);
 			Main.getINSTANCE().lobbyRunnable.start = true;
+			for(Player players : Bukkit.getOnlinePlayers()){
+				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§8➵ §7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+				ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)));
+			}
 		}
+		new LobbyRunnable().runTaskTimer(Main.getINSTANCE(), 0L, 20L);
+		giveItem(player);
 	}
 
 	@EventHandler

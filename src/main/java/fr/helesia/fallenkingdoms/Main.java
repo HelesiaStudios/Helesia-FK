@@ -69,7 +69,7 @@ public class Main extends JavaPlugin {
 	}
 	
 	public String getPrefix() {
-		return "§6[FK] §f";
+		return "§8➵ §f";
 	}
 	
 	@Override

@@ -61,13 +61,13 @@ public class GameManager {
 			player.getInventory().setItem(2, shovel);
 
 			TitleManager.sendTitle(player, "§6Fallen Kingdoms", "§eLa partie a commencé", 40);
-			Bukkit.broadcastMessage("§6§m-§6FK§6§m----------------------------------------------");
-			Bukkit.broadcastMessage("§fLa phase §bPréparation §fcommence !");
-			Bukkit.broadcastMessage("§f");
-			Bukkit.broadcastMessage("§fEquipe toi et récolte un maximum de TNT pour te préparer à l'assaut !");
-			Bukkit.broadcastMessage("§6§m-§6§m--§6§m----------------------------------------------");
-			Bukkit.broadcastMessage(Main.getINSTANCE().getPrefix() + "Si tu es coincé, tu peux utiliser la commande §b/suicide§f.");
 		}
+		Bukkit.broadcastMessage("§6§m-§6FK§6§m----------------------------------------------");
+		Bukkit.broadcastMessage("§fLa phase §bPréparation §fcommence !");
+		Bukkit.broadcastMessage("§f");
+		Bukkit.broadcastMessage("§fEquipe toi et récolte un maximum de TNT pour te préparer à l'assaut !");
+		Bukkit.broadcastMessage("§6§m-§6§m--§6§m----------------------------------------------");
+		Bukkit.broadcastMessage(Main.getINSTANCE().getPrefix() + "Si tu es coincé, tu peux utiliser la commande §b/suicide§f.");
 	}
 	
 	private void create(Location loc, String name) {

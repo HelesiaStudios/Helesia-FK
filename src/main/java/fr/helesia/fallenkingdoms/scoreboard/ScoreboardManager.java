@@ -29,7 +29,7 @@ public class ScoreboardManager {
   		this.scoreboardSign.setObjectiveName("§e❖ §6§lHelesia §e❖");
   		this.scoreboardSign.create();
     
-  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, "§8FK | fk-1");
+  		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, "§8FK ┃ fk-1");
   		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, "§f§k");
   		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, "§8➵ §7Jeu: §fFallen Kingdoms");
   		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§8➵ §7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
@@ -41,7 +41,7 @@ public class ScoreboardManager {
   	
 
   	public void loadScoreboardGame() {
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(11, "§8FK | fk-1");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(11, "§8FK ┃ fk-1");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(10, "§f§k");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, "§8➵ §7Equipe: §f" + Main.getINSTANCE().getTeam(player));
 		if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§cRouge")){
@@ -56,6 +56,6 @@ public class ScoreboardManager {
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§8➵ §cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§8➵ §3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§f§k");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§8➵ §7Temps: §f" + GameRunnable.day);
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§8➵ §7Temps: §f" + GameRunnable.day + "jour");
   	}
 }
