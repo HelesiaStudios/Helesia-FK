@@ -1,5 +1,6 @@
 package fr.helesia.fallenkingdoms.game;
 
+import fr.helesia.fallenkingdoms.Villager;
 import fr.helesia.fallenkingdoms.player.GamePlayer;
 import fr.helesia.fallenkingdoms.utils.ItemBuilder;
 import fr.helesia.fallenkingdoms.utils.TitleManager;
@@ -8,6 +9,7 @@ import org.bukkit.Difficulty;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.EnderCrystal;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
@@ -24,6 +26,11 @@ public class GameManager {
 	}
 	
 	public void loadGame() {
+		for(Entity entity : Bukkit.getWorld("world").getEntities()) {
+			if ((entity instanceof EnderCrystal) || (entity instanceof Villager)) {
+				entity.remove();
+			}
+		}
 		Bukkit.getWorld("world").setPVP(false);
 		Bukkit.getWorld("world").setTime(0);
 		Bukkit.getWorld("world").setDifficulty(Difficulty.NORMAL);
@@ -47,7 +54,12 @@ public class GameManager {
 			
 			player.getInventory().clear();
 			ItemStack pioche = new ItemBuilder(Material.WOOD_PICKAXE).toItemStack();
-			player.getInventory().setItem(1, pioche);
+			player.getInventory().setItem(0, pioche);
+			ItemStack hache = new ItemBuilder(Material.WOOD_AXE).toItemStack();
+			player.getInventory().setItem(1, hache);
+			ItemStack shovel = new ItemBuilder(Material.WOOD_SPADE).toItemStack();
+			player.getInventory().setItem(2, shovel);
+
 			TitleManager.sendTitle(player, "§6Fallen Kingdoms", "§eLa partie a commencé", 40);
 			Bukkit.broadcastMessage("§6§m-§6FK§6§m----------------------------------------------");
 			Bukkit.broadcastMessage("§fLa phase §bPréparation §fcommence !");

@@ -24,6 +24,7 @@ public class PlayerJoinListener implements Listener {
 		Player player = event.getPlayer();
 		new TeamsMenu().open(player);
 		player.closeInventory();
+		player.setGameMode(GameMode.SURVIVAL);
 		
 		if (!GameStatus.isStatus(GameStatus.ATTENTE)) {
 			player.setGameMode(GameMode.SPECTATOR);
