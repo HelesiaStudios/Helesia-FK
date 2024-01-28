@@ -56,6 +56,11 @@ public class Main extends JavaPlugin {
 		
 		new ListenersManager(this).registerListeners();
 		GameStatus.setStatus(GameStatus.ATTENTE);
+		for(Entity entity : Bukkit.getWorld("world").getEntities()) {
+			if ((entity instanceof EnderCrystal) || (entity instanceof Villager)) {
+				entity.remove();
+			}
+		}
 		
 	}
 	
