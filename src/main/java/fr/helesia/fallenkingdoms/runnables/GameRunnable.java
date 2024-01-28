@@ -39,7 +39,7 @@ public class GameRunnable extends BukkitRunnable {
 				if (timer == 60) {
 					Main.getINSTANCE().pvp = true;
 					Bukkit.getWorld("world").setPVP(true);
-					Bukkit.broadcastMessage(Main.getINSTANCE().getPrefix() + "§fLe pvp est désormais §aactivé§f.");
+					Bukkit.broadcastMessage(Main.getINSTANCE().getPrefix() + "§fLe PVP est désormais §aactif§f.");
 					return;
 				}
 			}
