@@ -85,13 +85,4 @@ public class Main extends JavaPlugin {
 		}
 		return "§7Aucune";
 	}
-
-	public String getTeamColor(Player player) {
-		if (Main.getINSTANCE().red_team.contains(player.getUniqueId())) {
-			return "§c";
-		} else if (Main.getINSTANCE().blue_team.contains(player.getUniqueId())) {
-			return "§3";
-		}
-		return "§7";
-	}
 }
