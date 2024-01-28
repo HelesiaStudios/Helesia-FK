@@ -13,7 +13,10 @@ public class PlayerDeathEvent implements Listener {
         e.setDeathMessage(null);
         Player victim = (Player) e.getEntity();
         Player attacker = victim.getKiller();
-        Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §f" + Main.getINSTANCE().getTeam(attacker) + " " + attacker.getName());
+        if(attacker.getEntityId() == 103){
+            Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §f" + Main.getINSTANCE().getTeam(attacker) + " " + attacker.getName());
+        }
+        Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §bune force maléfique");
 
         if (Main.getINSTANCE().red_team.contains(victim.getUniqueId())) {
             victim.teleport(new Location(Bukkit.getWorld("world"), 1999.628, 65.56250, 2108.371));
