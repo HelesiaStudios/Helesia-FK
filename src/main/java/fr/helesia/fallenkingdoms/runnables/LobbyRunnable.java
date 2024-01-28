@@ -54,6 +54,7 @@ public class LobbyRunnable extends BukkitRunnable {
 			for (Player players : Bukkit.getOnlinePlayers()) {
 				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
 				players.playSound(players.getLocation(), Sound.ORB_PICKUP, 10f, 1f);
+				players.sendTitle("§f", "§7Début dans " + timer + " " + getSecond());
 			}
 		}
 	}
@@ -63,6 +64,10 @@ public class LobbyRunnable extends BukkitRunnable {
 	private void setLevel() {
 		for (Player players : Bukkit.getOnlinePlayers()) {
 			players.setLevel(timer);
+			if (ScoreboardManager.scoreboardGame.containsKey(players)) {
+				ScoreboardManager.scoreboardGame.get(players).setLine(2, "§fEn attente (" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)) + ")");
+				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
+			}
 		}
 	}
 }
