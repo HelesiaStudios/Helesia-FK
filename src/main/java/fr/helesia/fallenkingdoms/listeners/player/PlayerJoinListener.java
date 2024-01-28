@@ -7,6 +7,7 @@ import fr.helesia.fallenkingdoms.player.GamePlayer;
 import fr.helesia.fallenkingdoms.scoreboard.ScoreboardManager;
 import fr.helesia.fallenkingdoms.utils.ItemBuilder;
 import org.bukkit.*;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -36,8 +37,6 @@ public class PlayerJoinListener implements Listener {
 			return;
 		}
 		player.getInventory().clear();
-		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setDyeColor(DyeColor.WHITE).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
-		player.getInventory().setItem(0, selectTeam);
 
 		Location spawn = new Location(Bukkit.getWorld("world"), 2000.439, 66.0, 2000.512);
 		player.teleport(spawn);
@@ -74,5 +73,16 @@ public class PlayerJoinListener implements Listener {
 
 				break;
 		}
+	}
+
+	public void giveItem(Player player){
+		ItemStack selectTeam = new ItemBuilder(Material.STAINED_CLAY).setDyeColor(DyeColor.getByColor(Color.WHITE)).setName("§6§lChoisir une équipe §7(Clic droit)").toItemStack();
+		ItemStack kit = new ItemBuilder(Material.NAME_TAG).setName("§6§lChoisir un kit §7(Clic droit)").toItemStack();
+		ItemStack hub = new ItemBuilder(Material.BED).setName("§6§lRetourner au lobby §7(Clic droit)").toItemStack();
+
+		player.getInventory().setItem(0, selectTeam);
+		player.getInventory().setItem(1, kit);
+		player.getInventory().setItem(2, hub);
+
 	}
 }
