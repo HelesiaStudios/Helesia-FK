@@ -19,11 +19,13 @@ public class PlayerDeathEvent implements Listener {
         victim.resetMaxHealth();
         victim.setGameMode(GameMode.SPECTATOR);
 
-        if(attacker.getEntityId() == 103){
-            Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §bune force maléfique");
-        }
-        Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §f" + Main.getINSTANCE().getTeam(attacker) + " " + attacker.getName());
+        for(Player players : Bukkit.getOnlinePlayers()){
+            if(attacker.getName().equals(players.getPlayer().getName())){
+                Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §f" + Main.getINSTANCE().getTeam(attacker) + " " + attacker.getName());
+            }
 
+            Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §b" + attacker.getName());
+        }
 
     }
 }
