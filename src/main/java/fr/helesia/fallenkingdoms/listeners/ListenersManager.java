@@ -29,6 +29,7 @@ public class ListenersManager {
 		pm.registerEvents(new EntityDamageListener(), this.plugin);
 		pm.registerEvents(new PlayerDeathEvent(), this.plugin);
 		pm.registerEvents(new PlayerWaiting(), this.plugin);
+
 		
 		
 		pm.registerEvents(new TeamsMenu(), this.plugin);
