@@ -59,6 +59,23 @@ public class PlayerMoveListener implements Listener {
 					}
 				}
 			}
+			// vert
+			if (Main.getINSTANCE().greenBase.isInArea(player.getLocation())) {
+				if (Main.getINSTANCE().green_team.contains(player.getUniqueId())) {
+					if (!gp.isInBase) {
+						gp.isInBase = true;
+						player.sendMessage("§bVous entrez dans votre base.");
+					}
+				}
+			} else {
+
+				if (Main.getINSTANCE().green_team.contains(player.getUniqueId())) {
+					if (gp.isInBase) {
+						gp.isInBase = false;
+						player.sendMessage("§cVous sortez de votre base.");
+					}
+				}
+			}
 		}
 	}
 	

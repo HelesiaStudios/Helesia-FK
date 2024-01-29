@@ -77,7 +77,7 @@ public class TeamsMenu implements Listener {
 					if (!Main.getINSTANCE().red_team.contains(player.getUniqueId())) {
 						if (Main.getINSTANCE().blue_team.contains(player.getUniqueId())) Main.getINSTANCE().blue_team.remove(player.getUniqueId());
 						Main.getINSTANCE().red_team.add(player.getUniqueId());
-						TeamsTagsManager.setNameTag(player, "§c§1Admin", "§c", "");
+						TeamsTagsManager.setNameTag(player, "§c§1Admin", "§cRouge ", "");
 						
 					} else {
 						player.sendMessage("§cVous êtes déjà dans une équipe.");
@@ -89,11 +89,25 @@ public class TeamsMenu implements Listener {
 					if (!Main.getINSTANCE().blue_team.contains(player.getUniqueId())) {
 						if (Main.getINSTANCE().red_team.contains(player.getUniqueId())) Main.getINSTANCE().red_team.remove(player.getUniqueId());
 						Main.getINSTANCE().blue_team.add(player.getUniqueId());
-						TeamsTagsManager.setNameTag(player, "§c§2Admin", "§9", "");
+						TeamsTagsManager.setNameTag(player, "§c§2Admin", "§3Bleu ", "");
 					} else {
 						player.sendMessage("§cVous êtes déjà dans une équipe.");
 					}
 					break;
+
+					case 2:
+						if (!Main.getINSTANCE().blue_team.contains(player.getUniqueId())) {
+							if (Main.getINSTANCE().green_team.contains(player.getUniqueId())){
+								Main.getINSTANCE().red_team.remove(player.getUniqueId());
+								Main.getINSTANCE().blue_team.remove(player.getUniqueId());
+							}
+
+							Main.getINSTANCE().green_team.add(player.getUniqueId());
+							TeamsTagsManager.setNameTag(player, "§c§2Admin", "§aVert ", "");
+						} else {
+							player.sendMessage("§cVous êtes déjà dans une équipe.");
+						}
+						break;
 					
 				default:
 					break;

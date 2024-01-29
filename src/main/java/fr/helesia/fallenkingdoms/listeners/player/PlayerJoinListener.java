@@ -95,7 +95,7 @@ public class PlayerJoinListener implements Listener {
 
 		player.getInventory().setItem(0, selectTeam);
 		player.getInventory().setItem(1, kit);
-		player.getInventory().setItem(2, hub);
+		player.getInventory().setItem(8, hub);
 
 	}
 }

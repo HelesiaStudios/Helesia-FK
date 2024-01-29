@@ -58,6 +58,15 @@ public class PlayerBlockListener implements Listener {
 				}
 			}
 		}
+
+		if (Main.getINSTANCE().green_team.contains(player.getUniqueId())) {
+			if (!Main.getINSTANCE().greenBase.isInArea(event.getBlock().getLocation())) {
+				if (!event.getBlock().getType().equals(Material.TNT) && !event.getBlock().getType().equals(Material.FIRE)) {
+					event.setCancelled(true);
+					return;
+				}
+			}
+		}
 	}
 
 }

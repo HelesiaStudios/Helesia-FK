@@ -61,7 +61,7 @@ public class FurnasePropertyListener implements Listener {
 		GamePlayer gp = GamePlayer.gamePlayers.get(player.getName());
 		
 		if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
-			if (event.getItem().getType() == Material.NETHER_STAR) {
+			if (event.getItem().getType() == Material.STAINED_CLAY) {
 				new TeamsMenu().open(player);
 			}
 		}

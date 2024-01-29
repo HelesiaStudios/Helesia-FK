@@ -17,12 +17,13 @@ import fr.helesia.fallenkingdoms.Main;
 import org.bukkit.inventory.ItemStack;
 
 public class GameManager {
-	
-	private Location redSpawn, blueSpawn;
+
+	private Location redSpawn, blueSpawn, greenSpawn;
 
 	public GameManager() {
-		this.redSpawn = new Location(Bukkit.getWorld("world"), 1999.628, 65.56250, 2108.371);
-		this.blueSpawn = new Location(Bukkit.getWorld("world"), 2001.685, 65.56250, 1892.300);
+		this.redSpawn = new Location(Bukkit.getWorld("world"), 1999.628, 65.56250, 2108.371, -179, -0);
+		this.blueSpawn = new Location(Bukkit.getWorld("world"), 2001.685, 65.56250, 1892.300, -0, 2);
+		this.greenSpawn = new Location(Bukkit.getWorld("world"), 1892.429, 65.56250, 1999.704, -89, -0);
 	}
 	
 	public void loadGame() {
@@ -39,7 +40,9 @@ public class GameManager {
 		this.create(new Location(Bukkit.getWorld("world"), 1999.990, 66.0, 2086.954), "rouge");
 		// bleu
 		this.create(new Location(Bukkit.getWorld("world"), 2001.019, 66.0, 1913.966), "bleu");
-		
+		// vert
+		this.create(new Location(Bukkit.getWorld("world"), 1914.130, 66.0, 2000.074), "vert");
+
 		// scoreboard
 		for (Player player : Bukkit.getOnlinePlayers()) {
 			GamePlayer gp = GamePlayer.gamePlayers.get(player.getName());
@@ -50,6 +53,8 @@ public class GameManager {
 				player.teleport(getRedSpawn());
 			} else if (Main.getINSTANCE().blue_team.contains(player.getUniqueId())) {
 				player.teleport(getBlueSpawn());
+			} else if (Main.getINSTANCE().green_team.contains(player.getUniqueId())) {
+				player.teleport(getGreenSpawn());
 			}
 			
 			player.getInventory().clear();
@@ -84,5 +89,9 @@ public class GameManager {
 	
 	public Location getRedSpawn() {
 		return redSpawn;
+	}
+
+	public Location getGreenSpawn() {
+		return greenSpawn;
 	}
 }
