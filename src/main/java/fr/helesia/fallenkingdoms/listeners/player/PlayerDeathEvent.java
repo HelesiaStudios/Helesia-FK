@@ -33,6 +33,7 @@ public class PlayerDeathEvent implements Listener {
             }
 
             if(Bukkit.getOnlinePlayers().contains(attacker)){
+                victim.setGameMode(GameMode.SURVIVAL);
                 Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §f" + Main.getINSTANCE().getTeam(attacker) + " " + attacker.getName());
                 if (Main.getINSTANCE().red_team.contains(victim.getUniqueId())) {
                     victim.teleport(getRedSpawn());
@@ -40,7 +41,12 @@ public class PlayerDeathEvent implements Listener {
                     victim.teleport(getBlueSpawn());
                 }
             }
-
+            victim.setGameMode(GameMode.SURVIVAL);
+            if (Main.getINSTANCE().red_team.contains(victim.getUniqueId())) {
+                victim.teleport(getRedSpawn());
+            } else if (Main.getINSTANCE().blue_team.contains(victim.getUniqueId())) {
+                victim.teleport(getBlueSpawn());
+            }
             Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §b" + attacker);
         }
 
