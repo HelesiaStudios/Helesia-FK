@@ -26,7 +26,8 @@ public class TeamsMenu implements Listener {
 	
 	public TeamsMenu() {
 		inventory.setItem(0, getTeamItem("§cRouge", Main.getINSTANCE().red_team, (byte) 1, ChatColor.RED));
-		inventory.setItem(1, getTeamItem("§9Bleue", Main.getINSTANCE().blue_team, (byte) 4, ChatColor.BLUE));
+		inventory.setItem(1, getTeamItem("§9Bleu", Main.getINSTANCE().blue_team, (byte) 4, ChatColor.BLUE));
+		inventory.setItem(2, getTeamItem("§aVert", Main.getINSTANCE().green_team, (byte) 2, ChatColor.GREEN));
 	}
 	
 	public ItemStack getTeamItem(String teamName, List<UUID> team, byte data, ChatColor color) {
