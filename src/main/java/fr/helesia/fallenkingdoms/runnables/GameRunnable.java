@@ -69,14 +69,22 @@ public class GameRunnable extends BukkitRunnable {
 		
 		for (Player player : Bukkit.getOnlinePlayers()) {
 			if (ScoreboardManager.scoreboardGame.containsKey(player)) {
+				ScoreboardManager.scoreboardGame.get(player).setLine(11, "§8FK ┃ fk-1");
+				ScoreboardManager.scoreboardGame.get(player).setLine(10, "§f§k");
+				ScoreboardManager.scoreboardGame.get(player).setLine(9, "§8➵ §7Equipe: §f" + Main.getINSTANCE().getTeam(player));
+				if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§cRouge")){
+					ScoreboardManager.scoreboardGame.get(player).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("rouge").getLife()+"§c❤");
+				} else if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§9Bleu")){
+					ScoreboardManager.scoreboardGame.get(player).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("bleu").getLife()+"§c❤");
+				}
 				ScoreboardManager.scoreboardGame.get(player).setLine(7, "§f§k");
-				ScoreboardManager.scoreboardGame.get(player).setLine(6, Main.getINSTANCE().assaut ? "§7Assaut: §a✔" : "§7Assaut: §c✘");
-				ScoreboardManager.scoreboardGame.get(player).setLine(5, Main.getINSTANCE().pvp ? "§7PVP: §a✔" : "§7PVP: §c✘");
+				ScoreboardManager.scoreboardGame.get(player).setLine(6, Main.getINSTANCE().assaut ? "§8➵ §7Assaut: §a✔" : "§8➵ §7Assaut: §c✘");
+				ScoreboardManager.scoreboardGame.get(player).setLine(5, Main.getINSTANCE().pvp ? "§8➵ §7PVP: §a✔" : "§8➵ §7PVP: §c✘");
 				ScoreboardManager.scoreboardGame.get(player).setLine(4, "§f§k");
-				ScoreboardManager.scoreboardGame.get(player).setLine(3, "§cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
-				ScoreboardManager.scoreboardGame.get(player).setLine(2, "§3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
+				ScoreboardManager.scoreboardGame.get(player).setLine(3, "§8➵" + " §cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
+				ScoreboardManager.scoreboardGame.get(player).setLine(2, "§8➵" + " §3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
 				ScoreboardManager.scoreboardGame.get(player).setLine(1, "§f§k");
-				ScoreboardManager.scoreboardGame.get(player).setLine(0, "§7Temps: §f" + GameRunnable.day);
+				ScoreboardManager.scoreboardGame.get(player).setLine(0, "§8➵" + " §7Jour: §f" + GameRunnable.day);
 			}
 		}
 	}
