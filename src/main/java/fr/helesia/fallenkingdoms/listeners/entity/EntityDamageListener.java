@@ -47,19 +47,17 @@ public class EntityDamageListener implements Listener {
 				EnderCrystal ecRouge = HearthManager.enderCrystals.get("rouge").getEc();
 				
 				if (ec.equals(ecRouge)) {
-					
-					// vélocité
+
 					if (damager.getLocation().distance(ecRouge.getLocation()) <= 3.0f) {
 						if (Main.getINSTANCE().blue_team.contains(damager.getUniqueId())) {
-							damager.setVelocity(new Vector(0, -1, -1.5));
 							event.setCancelled(true);
 						}
 					}
 					
 					// intediction rouge
 					if (Main.getINSTANCE().red_team.contains(damager.getUniqueId())) {
-						damager.sendMessage("§cVous ne pouvez pas attaquer votre coeur...");
 						event.setCancelled(true);
+						damager.sendMessage("§cVous ne pouvez pas attaquer votre coeur...");
 						return;
 					}
 					
@@ -69,7 +67,6 @@ public class EntityDamageListener implements Listener {
 						damager.playSound(damager.getLocation(), Sound.BLAZE_HIT, 1f, 1f);
 						event.setCancelled(true);
 						if ((Math.random() * 100) < 10) {
-							damager.setFireTicks(20 * 5);
 							damager.playSound(damager.getLocation(), Sound.AMBIENCE_THUNDER, 1f, 1f);
 						}
 						
@@ -125,15 +122,14 @@ public class EntityDamageListener implements Listener {
 					// vélocité
 					if (damager.getLocation().distance(ecBleu.getLocation()) <= 3.0f) {
 						if (Main.getINSTANCE().red_team.contains(damager.getUniqueId())) {
-							damager.setVelocity(new Vector(0, -1, -1.5));
 							event.setCancelled(true);
 						}
 					}
 					
 					// intediction rouge
 					if (Main.getINSTANCE().blue_team.contains(damager.getUniqueId())) {
-						damager.sendMessage("§cVous ne pouvez pas attaquer votre coeur...");
 						event.setCancelled(true);
+						damager.sendMessage("§cVous ne pouvez pas attaquer votre coeur...");
 						damager.setFireTicks(20);
 						return;
 					}
