@@ -57,7 +57,7 @@ public class LobbyRunnable extends BukkitRunnable {
 				ScoreboardManager.scoreboardGame.get(players).setLine(5, "§8➵ §7Jeu: §fFallen Kingdoms");
 				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§8➵ §7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
 				ScoreboardManager.scoreboardGame.get(players).setLine(3, "§9§k");
-				ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + new SimpleDateFormat("mm:ss").format(new Date(timer))+"s");
+				ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + timer+"s");
 				ScoreboardManager.scoreboardGame.get(players).setLine(1, "§9§k");
 				ScoreboardManager.scoreboardGame.get(players).setLine(0, ChatColor.GOLD + "mc.helesia.fr");
 				players.playSound(players.getLocation(), Sound.ORB_PICKUP, 10f, 1f);
@@ -76,7 +76,7 @@ public class LobbyRunnable extends BukkitRunnable {
 			ScoreboardManager.scoreboardGame.get(players).setLine(5, "§8➵ §7Jeu: §fFallen Kingdoms");
 			ScoreboardManager.scoreboardGame.get(players).setLine(4, "§8➵ §7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
 			ScoreboardManager.scoreboardGame.get(players).setLine(3, "§9§k");
-			ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + new SimpleDateFormat("mm:ss").format(new Date(timer))+"s");
+			ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + timer+"s");
 			ScoreboardManager.scoreboardGame.get(players).setLine(1, "§9§k");
 			ScoreboardManager.scoreboardGame.get(players).setLine(0, ChatColor.GOLD + "mc.helesia.fr");
 		}

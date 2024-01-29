@@ -41,22 +41,22 @@ public class ScoreboardManager {
   	
 
   	public void loadScoreboardGame() {
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(11, "§8FK ┃ fk-1");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(10, "§f§k");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, "§8➵ §7Equipe: §f" + Main.getINSTANCE().getTeam(player));
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(12, "§8FK ┃ fk-1");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(11, "§f§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(10, "§8➵ §7Equipe: §f" + Main.getINSTANCE().getTeam(player));
 		if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§cRouge")){
-			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("rouge").getLife()+"§c❤");
+			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("rouge").getLife()+"§c❤");
 		} else if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§9Bleu")){
-			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("bleu").getLife()+"§c❤");
+			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("bleu").getLife()+"§c❤");
 		} else if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§aVert")){
-			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("vert").getLife()+"§c❤");
+			((ScoreboardSign) scoreboardGame.get(this.player)).setLine(9, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("vert").getLife()+"§c❤");
 		}
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, "§f§k");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, Main.getINSTANCE().assaut ? "§8➵ §7Assaut: §a✔" : "§8➵ §7Assaut: §c✘");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, Main.getINSTANCE().pvp ? "§8➵ §7PVP: §a✔" : "§8➵ §7PVP: §c✘");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§f§k");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§8➵" + " §cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§8➵" + " §3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(8, "§f§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(7, Main.getINSTANCE().assaut ? "§8➵ §7Assaut: §a✔" : "§8➵ §7Assaut: §c✘");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, Main.getINSTANCE().pvp ? "§8➵ §7PVP: §a✔" : "§8➵ §7PVP: §c✘");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, "§f§k");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§8➵" + " §cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§8➵" + " §3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§8➵" + " §aVert §7"+HearthManager.enderCrystals.get("vert").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§f§k");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§8➵" + " §7Jour: §f" + GameRunnable.day);
