@@ -67,6 +67,5 @@ public class PlayerWaiting implements Listener {
         } else {
             e.setCancelled(false);
         }
-
     }
 }
