@@ -12,6 +12,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class PlayerBlockListener implements Listener {
+
 	
 	@EventHandler
 	public void onInteract(PlayerInteractEvent event) {
@@ -26,6 +27,7 @@ public class PlayerBlockListener implements Listener {
 			}
 		}
 	}
+
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event) {
 		Player player = event.getPlayer();
@@ -36,6 +38,7 @@ public class PlayerBlockListener implements Listener {
 			player.sendMessage("§cLes assauts ne sont pas encore activés.");
 			event.setCancelled(true);
 		}
+
 		
 		if (Main.getINSTANCE().red_team.contains(player.getUniqueId())) {
 			if (!Main.getINSTANCE().redBase.isInArea(event.getBlock().getLocation())) {
@@ -45,6 +48,7 @@ public class PlayerBlockListener implements Listener {
 				}
 			}
 		}
+
 		
 		if (Main.getINSTANCE().blue_team.contains(player.getUniqueId())) {
 			if (!Main.getINSTANCE().blueBase.isInArea(event.getBlock().getLocation())) {
@@ -55,4 +59,5 @@ public class PlayerBlockListener implements Listener {
 			}
 		}
 	}
+
 }

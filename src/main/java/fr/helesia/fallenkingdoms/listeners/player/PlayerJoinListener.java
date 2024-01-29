@@ -57,6 +57,7 @@ public class PlayerJoinListener implements Listener {
 
 		giveItem(player);
 		giveItem(player);
+
 		giveItem(player);
 		giveItem(player);
 		giveItem(player);

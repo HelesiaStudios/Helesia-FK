@@ -21,6 +21,7 @@ public class PlayerMoveListener implements Listener {
 		if (GameStatus.isStatus(GameStatus.DEATHMATCH)) {
 			
 			if (gp.getTeam() != null) {
+
 				TitleManager.sendActionBar(player, "§7Votre base: §f" + (int) player.getLocation().distance(gp.region.getMiddle()) + "b " + getArrowColor(player.getLocation().distance(gp.region.getMiddle())) + ArrowTargetUtils.calculateArrow(player, gp.region.getMiddle()));
 			}
 			

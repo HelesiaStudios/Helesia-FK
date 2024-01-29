@@ -35,7 +35,8 @@ public class PlayerQuitListener implements Listener {
 		fr.helesia.fallenkingdoms.Villager v = Main.getINSTANCE().villagers.get(player.getUniqueId());
 		
 		if (villager.getCustomName().equalsIgnoreCase(v.getVillagerID())) {
-			
+
+
 			for (ItemStack i : v.getInventory()) {
 				Bukkit.getWorld("world").dropItemNaturally(player.getLocation(), i);
 			}
