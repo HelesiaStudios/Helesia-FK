@@ -31,6 +31,7 @@ public class PlayerDeathEvent implements Listener {
                 victim.teleport(lastDeath);
                 victim.sendMessage("§cLe pvp n'est pas encore actif !");
             }
+            
 
             if(Bukkit.getOnlinePlayers().contains(attacker)){
                 victim.setGameMode(GameMode.SURVIVAL);
