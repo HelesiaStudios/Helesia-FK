@@ -51,6 +51,8 @@ public class PlayerDeathEvent implements Listener {
                 victim.teleport(getRedSpawn());
             } else if (Main.getINSTANCE().blue_team.contains(victim.getUniqueId())) {
                 victim.teleport(getBlueSpawn());
+            } else if (Main.getINSTANCE().green_team.contains(victim.getUniqueId())){
+                victim.teleport(getGreenSpawn());
             }
             Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §b" + attacker);
         }

@@ -76,6 +76,8 @@ public class GameRunnable extends BukkitRunnable {
 					ScoreboardManager.scoreboardGame.get(player).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("rouge").getLife()+"§c❤");
 				} else if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§9Bleu")){
 					ScoreboardManager.scoreboardGame.get(player).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("bleu").getLife()+"§c❤");
+				} else if(Main.getINSTANCE().getTeam(player).equalsIgnoreCase("§aVert")){
+					ScoreboardManager.scoreboardGame.get(player).setLine(8, "§8➵ §7Ton nexus: §f" + HearthManager.enderCrystals.get("vert").getLife()+"§c❤");
 				}
 				ScoreboardManager.scoreboardGame.get(player).setLine(7, "§f§k");
 				ScoreboardManager.scoreboardGame.get(player).setLine(6, Main.getINSTANCE().assaut ? "§8➵ §7Assaut: §a✔" : "§8➵ §7Assaut: §c✘");
@@ -83,6 +85,7 @@ public class GameRunnable extends BukkitRunnable {
 				ScoreboardManager.scoreboardGame.get(player).setLine(4, "§f§k");
 				ScoreboardManager.scoreboardGame.get(player).setLine(3, "§8➵" + " §cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
 				ScoreboardManager.scoreboardGame.get(player).setLine(2, "§8➵" + " §3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
+				ScoreboardManager.scoreboardGame.get(player).setLine(2, "§8➵" + " §aVert §7"+HearthManager.enderCrystals.get("vert").getLife()+"❤");
 				ScoreboardManager.scoreboardGame.get(player).setLine(1, "§f§k");
 				ScoreboardManager.scoreboardGame.get(player).setLine(0, "§8➵" + " §7Jour: §f" + GameRunnable.day);
 			}
