@@ -53,9 +53,9 @@ public class ScoreboardManager {
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(6, Main.getINSTANCE().assaut ? "§8➵ §7Assaut: §a✔" : "§8➵ §7Assaut: §c✘");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(5, Main.getINSTANCE().pvp ? "§8➵ §7PVP: §a✔" : "§8➵ §7PVP: §c✘");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(4, "§f§k");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§8➵ §cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§8➵ §3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(3, "§8➵" + " §cRouge §7"+HearthManager.enderCrystals.get("rouge").getLife()+"❤");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(2, "§8➵" + " §3Bleu §7"+HearthManager.enderCrystals.get("bleu").getLife()+"❤");
 		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(1, "§f§k");
-		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§8➵ §7Temps: §f" + GameRunnable.day + "jour");
+		((ScoreboardSign) scoreboardGame.get(this.player)).setLine(0, "§8➵" + " §7Temps: §f" + GameRunnable.day + " jour");
   	}
 }

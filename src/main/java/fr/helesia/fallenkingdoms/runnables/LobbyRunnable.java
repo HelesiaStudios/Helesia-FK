@@ -53,14 +53,14 @@ public class LobbyRunnable extends BukkitRunnable {
 			Bukkit.broadcastMessage("§8➵ §fDébut de la partie dans §b" + timer + " " + getSecond() + "§f.");
 			for (Player players : Bukkit.getOnlinePlayers()) {
 				ScoreboardManager.scoreboardGame.get(players).setLine(4, "§8➵ §7Joueurs: §a" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
-				ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵ §7En attente: §f" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)) + new LobbyRunnable().getSecond());
+				ScoreboardManager.scoreboardGame.get(players).setLine(2, "§8➵" + " §7En attente: §f" + new SimpleDateFormat("mm:ss").format(new Date(Main.getINSTANCE().lobbyRunnable.timer * 1000)) + "s");
 				players.playSound(players.getLocation(), Sound.ORB_PICKUP, 10f, 1f);
 				players.sendTitle("§f", "§7Début dans " + timer + " " + getSecond());
 			}
 		}
 	}
 
-	private String getSecond() { return timer == 1 ? "sec" : "secs"; }
+	private String getSecond() { return timer == 1 ? "seconde" : "secondes"; }
 	
 	private void setLevel() {
 		for (Player players : Bukkit.getOnlinePlayers()) {
