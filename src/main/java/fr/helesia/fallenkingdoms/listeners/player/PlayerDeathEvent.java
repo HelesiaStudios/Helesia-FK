@@ -20,7 +20,7 @@ public class PlayerDeathEvent implements Listener {
         victim.setGameMode(GameMode.SPECTATOR);
 
         for(Player players : Bukkit.getOnlinePlayers()){
-            if(attacker.getName().equals(players.getPlayer().getName())){
+            if(Bukkit.getOnlinePlayers().contains(attacker)){
                 Bukkit.broadcastMessage("§7✝ §f" + Main.getINSTANCE().getTeam(victim) + " " + victim.getName() + " §7a été tué(e) par §f" + Main.getINSTANCE().getTeam(attacker) + " " + attacker.getName());
             }
 
